@@ -21,6 +21,7 @@ fetch('profile.json')
     .then(response => response.json()) // Převedení odpovědi na JSON objekt
     .then(data => {
         // 1. Vyplnění jména do <h1>
+        Console.log(data.name)
         document.getElementById('name').textContent = data.name;
 
         // 2. Vyplnění dovedností (skills) do <ul>
