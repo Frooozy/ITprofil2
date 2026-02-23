@@ -1,12 +1,16 @@
 <?php
-$content = file_get_contents('profile.json');
-echo $content;
+// 1. Načtení obsahu souboru profile.json
+// Funkce file_get_contents() přečte celý soubor do jednoho řetězce.
+$jsonString = file_get_contents('profile.json');
 
-$Info_profile = json_decode($content, true);
+// 2. Převod JSON řetězce na PHP asociativní pole
+// Parametr 'true' zajistí, že se data převedou na pole, nikoliv na objekt.
+$data = json_decode($jsonString, true);
 
-$name = $Info_profile['name'];
-$skills = $Info_profile['skill'];
-$interests = $Info_profile['interests'];
+// Příprava proměnných z pole (s kontrolou, zda existují)
+$name = $data['name'] ?? 'Jméno nebylo zadáno';
+$skills = $data['skill'] ?? []; // Ve tvém JSONu je klíč "skill"
+$interests = $data['interests'] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -19,21 +23,23 @@ $interests = $Info_profile['interests'];
 </head>
 <body>
 
-    <h1><?php echo htmlspecialchars($name); ?></h1>
+    <div class="container">
+        <h1><?php echo htmlspecialchars($name); ?></h1>
 
-    <h2>Seznam dovedností:</h2>
-    <ul>
-        <?php foreach ($skills as $skill): ?>
-            <li><?php echo htmlspecialchars($skill); ?></li>
-        <?php endforeach; ?>
-    </ul>
+        <h2>Moje dovednosti</h2>
+        <ul>
+            <?php foreach ($skills as $s): ?>
+                <li><?php echo htmlspecialchars($s); ?></li>
+            <?php endforeach; ?>
+        </ul>
 
-    <h2>Zájmy a projekty:</h2>
-    <ul>
-        <?php foreach ($interests as $interest): ?>
-            <li><?php echo htmlspecialchars($project); ?></li>
-        <?php endforeach; ?>
-    </ul>
+        <h2>Zájmy a projekty</h2>
+        <ul>
+            <?php foreach ($interests as $interest): ?>
+                <li><?php echo htmlspecialchars($interest); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
 
 </body>
 </html>
