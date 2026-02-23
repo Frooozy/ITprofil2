@@ -9,19 +9,6 @@ $skills = $Info_profile['skill'];
 $interests = $Info_profile['interests'];
 ?>
 
-<?php
-// Načtení dat ze souboru
-$jsonData = file_get_contents('profile.json');
-
-// Převod JSON na PHP pole (asociativní)
-$profile = json_decode($jsonData, true);
-
-// Základní proměnné
-$name = $profile['name'] ?? 'Jméno nenalezeno';
-$skills = $profile['skills'] ?? [];
-$projects = $profile['projects'] ?? [];
-?>
-
 <!DOCTYPE html>
 <html lang="cs">
 <head>
