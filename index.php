@@ -41,7 +41,7 @@ $projects = $profile['projects'] ?? [];
 
     <h2>Zájmy a projekty:</h2>
     <ul>
-        <?php foreach ($projects as $project): ?>
+        <?php foreach ($interests as $interest): ?>
             <li><?php echo htmlspecialchars($project); ?></li>
         <?php endforeach; ?>
     </ul>

@@ -1,12 +1,12 @@
-:root {
-    /* --primary: #2563eb; */
+/* :root {
+    /* --primary: #2563eb; 
     --primary: green;
     --bg: #f8fafc;
     --card: #ffffff;
     --text: #1e293b;
 }
 
-/* Dark mode třída pro JS */
+Dark mode třída pro JS 
 body.dark-mode {
     --bg: #0f172a;
     --card: #1e293b;
@@ -73,7 +73,7 @@ footer {
     opacity: 0.7;
 }
 
-/* Styl pro mřížku zájmů */
+
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -82,7 +82,7 @@ footer {
 }
 
 .interest-item {
-    background: var(--bg); /* Světlejší pozadí uvnitř karty */
+    background: var(--bg); /* Světlejší pozadí uvnitř karty 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -110,4 +110,55 @@ footer {
 .interest-item p {
     font-size: 0.9rem;
     color: #64748b;
+} */
+
+/* Základní nastavení stránky */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Karta profilu */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nadpisy */
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 25px;
+}
+
+/* Seznamy (Dovednosti a Projekty) */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #ecf0f1;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-left: 5px solid #3498db;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateX(5px);
+    background: #e0e6e8;
 }
